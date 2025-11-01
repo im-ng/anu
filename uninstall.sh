@@ -8,8 +8,8 @@ codium --uninstall-extension akamud.vscode-theme-onelight
 codium --uninstall-extension catppuccin.catppuccin-vsc
 codium --uninstall-extension catppuccin.catppuccin-vsc-icons
 codium --uninstall-extension vadimcn.vscode-lldb
-codium --uninstall-extension ms-azuretools.vscode-containers
 codium --uninstall-extension ms-azuretools.vscode-docker
+codium --uninstall-extension ms-azuretools.vscode-containers
 codium --uninstall-extension golang.go
 codium --uninstall-extension ziglang.vscode-zig
 codium --uninstall-extension dreamcatcher45.podmanager
@@ -38,6 +38,7 @@ gnome-extensions uninstall Vitals@CoreCoding.com --quiet
 gnome-extensions uninstall tilingshell@ferrarodomenico.com --quiet
 gnome-extensions uninstall openbar@neuromorph --quiet
 gnome-extensions uninstall appindicatorsupport@rgcjonas.gmail.com --quiet
+gnome-extensions uninstall hidetopbarmathieu.bidon.ca.v123.shell-extension.zip --quiet
 echo -e ''
 sleep 1
 
@@ -46,8 +47,8 @@ rm -rf ~/.icons
 rm ~/.config/dconf/user
 rm ~/.config/autostart/ulauncher.desktop
 rm -r ~/.config/ulauncher
-rm -r /usr/local/go
-rm -rf /usr/local/zig
+sudo rm -r /usr/local/go
+sudo rm -rf /usr/local/zig
 echo -e ''
 sleep 1
 

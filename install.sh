@@ -57,29 +57,32 @@ codium --install-extension esbenp.prettier-vscode
 echo -e ''
 
 echo -e 'Download necessary gnome-extensions'
-wget https://extensions.gnome.org/extension-data/openbarneuromorph.v35.shell-extension.zip
+wget -q https://extensions.gnome.org/extension-data/openbarneuromorph.v35.shell-extension.zip
 gnome-extensions install openbarneuromorph.v35.shell-extension.zip --force
 
-wget https://extensions.gnome.org/extension-data/tilingshellferrarodomenico.com.v12.shell-extension.zip
+wget -q https://extensions.gnome.org/extension-data/tilingshellferrarodomenico.com.v12.shell-extension.zip
 gnome-extensions install tilingshellferrarodomenico.com.v12.shell-extension.zip --force
 
-wget https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v68.shell-extension.zip
+wget -q https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v68.shell-extension.zip
 gnome-extensions install VitalsCoreCoding.com.v68.shell-extension.zip --force
 
-wget https://extensions.gnome.org/extension-data/appindicatorsupportrgcjonas.gmail.com.v58.shell-extension.zip
+wget -q https://extensions.gnome.org/extension-data/appindicatorsupportrgcjonas.gmail.com.v58.shell-extension.zip
 gnome-extensions install appindicatorsupportrgcjonas.gmail.com.v58.shell-extension.zip --force
 
+wget -q https://extensions.gnome.org/extension-data/hidetopbarmathieu.bidon.ca.v123.shell-extension.zip
+gnome-extensions install hidetopbarmathieu.bidon.ca.v123.shell-extension.zip --force
+
 echo -e 'Download necessary gnome apps'
-wget https://github.com/Ulauncher/Ulauncher/releases/download/5.15.7/ulauncher_5.15.7_all.deb
+wget -q https://github.com/Ulauncher/Ulauncher/releases/download/5.15.7/ulauncher_5.15.7_all.deb
 sudo apt install ./ulauncher_5.15.7_all.deb -y
 mkdir ~/.config/autostart
 cp config/ulauncher.desktop ~/.config/autostart/
 echo -e ''
 
-echo - e 'Load adwaita blue theme'
+echo -e 'Load adwaita blue theme'
 git clone https://github.com/ricardoherreramx/adwaitaru.git
 mkdir ~/.icons
-cp -r adwaitaru/Adwaitaru-blue .icons/
+cp -r adwaitaru/Adwaitaru-blue ~/.icons/
 echo -e ''
 
 echo -e 'Load gnome keyboard shortcuts and pre-settings'
@@ -88,18 +91,20 @@ echo -e ''
 sleep 1
 
 echo -e 'Install zig'
-wget https://ziglang.org/download/0.15.1/zig-x86_64-linux-0.15.1.tar.xz
+wget -q https://ziglang.org/download/0.15.1/zig-x86_64-linux-0.15.1.tar.xz
 sudo tar -C /usr/local/ -xf zig-x86_64-linux-0.15.1.tar.xz 
-sudo mv /usr/local/zig-x86_64-linux-0.15.1.tar.xz /usr/local/zig
+sudo mv -f /usr/local/zig-x86_64-linux-0.15.1 /usr/local/zig
 echo 'export ZIG=/usr/local/zig' >> ~/.bashrc
-echo 'export PATH=$ZIG:$PATH' >> ~/.bashrc
 echo -e ''
 
 echo -e 'Install Go'
-wget https://go.dev/dl/go1.25.3.linux-amd64.tar.gz
+wget -q https://go.dev/dl/go1.25.3.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz
 echo 'export GO=/usr/local/go' >> ~/.bashrc
-echo 'export PATH=$GO:$PATH' >> ~/.bashrc
+echo -e ''
+
+echo -e 'Set path'
+echo 'export PATH=$ZIG:$GO/bin:$PATH' >> ~/.bashrc
 echo -e ''
 
 echo -e 'Remove downloaded dependencies'
@@ -107,6 +112,7 @@ rm openbarneuromorph.v35.shell-extension.zip
 rm tilingshellferrarodomenico.com.v12.shell-extension.zip
 rm VitalsCoreCoding.com.v68.shell-extension.zip
 rm appindicatorsupportrgcjonas.gmail.com.v58.shell-extension.zip
+rm hidetopbarmathieu.bidon.ca.v123.shell-extension.zip
 rm ulauncher_5.15.7_all.deb
 rm -rf adwaitaru
 rm -rf zig-x86_64-linux-0.15.1.tar.xz
