@@ -1,16 +1,24 @@
-### Anubar
+### Anu (​அனு)
 
-The waybar inspired a drop-in replacement topbar for personal use. It quickly elevates the fresh ubuntu installation to the developer ready machine with useful shortcuts, extensions and apps. The script only **tested** in Ubuntu 24.04 new install alone.
+A drop-in replacement top bar for individual use was inspired by the waybar. It swiftly transforms the newly installed Debian variants into a developer-ready system with practical apps, extensions, and shortcuts. 
 
-Except the hyprland exceptional tiling, this one stop script adjusts the default Ubuntu to mimic `hyprland` + `waybar` combinations under Gnome + Wayland.
+The default Ubuntu/Debian setup is modified by this one-stop script to emulate the `hyprland` + `waybar` combos under `Gnome + Wayland`.
+
+Only a fresh Debian installation was used for testing the script.
+
+I use this more for my own convenience to get started on any new machine installations asap.
+
+_Think anu is like personalized `omarchy`, but limited_
+
+#### How does it look?
 
 ![preview](./resources/image1.png)
 
 #### Getting started
 
 ```
-git clone https://github.com/im-ng/anubar.git
-cd anubar
+git clone https://github.com/im-ng/anu.git
+cd anu
 chmod +x install.sh
 ./install.sh
 ```
@@ -18,7 +26,7 @@ chmod +x install.sh
 #### Clean up
 
 ```
-cd anubar
+cd anu
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
